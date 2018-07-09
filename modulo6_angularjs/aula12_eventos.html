@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aula 12 - Eventos</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    </head>
+    <body ng-app="appEventos" ng-controller="eventosCtrl">
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4 class="panel-title"><a href="#conteudo" data-toggle="collapse">Aula de Eventos</a></h4>
+                </div>
+                <div id="conteudo" class="collapse in panel-collapse">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="btn-group btn-group-justified">
+                                    <a href="" class="btn btn-success btn-sm" ng-click="contador = contador + 1">+1</a>
+                                    <a href="" class="btn btn-success btn-sm" ng-click="contador = contador + 2">+2</a>
+                                </div>
+                                <button class="btn btn-primary" ng-click="adicionar()">Adicionar</button>
+                                <p>{{contador}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                
+                                <div class="col-sm-8">
+<!--                                    <button ng-click="mostrarLista()">Mostrar</button>
+                                    <button ng-click="esconderLista()">Esconder</button>-->
+                                    <button ng-click="acao()">{{texto}}</button>
+                                    <h2>Menu:</h2>
+                                    <ul class="list-group" ng-show="mostrar">
+                                        <li class="list-group-item">Pizza</li>
+                                        <li class="list-group-item">Feijao</li>
+                                        <li class="list-group-item">Arroz</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                Focus / Blur em AngularJS: <input type="text" ng-focus="focou()" ng-blur="desfocou()" />
+                                <p>{{avisoEvento}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        Keywords:<code>$scope.nomeFuncao = function(parametros){ ... } | ng-focus="nomeFuncao()" | ng-blur="" | ng-click="" </code>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var app = angular.module("appEventos",[]);
+            app.controller("eventosCtrl",function($scope,$http){
+                $scope.contador = 0;
+                $scope.adicionar = function() {
+                    $scope.contador = $scope.contador + 1;
+                };
+                
+//                $scope.mostrarLista = function(){
+//                    $scope.mostrar = true;
+//                };
+//                
+//                $scope.esconderLista = function(){
+//                    $scope.mostrar = false;
+//                };
+
+                $scope.mostrar = false;
+                $scope.texto = "Mostrar";
+                
+                $scope.acao = function(){
+                    if ($scope.mostrar === false) {
+                        $scope.mostrar = true;
+                        $scope.texto = "Esconder";
+                    } else {
+                        $scope.mostrar = false;
+                        $scope.texto = "Mostrar";
+                    }
+                };
+                
+                $scope.focou = function(){
+                    $scope.avisoEvento = "Focou";
+                };
+                
+                $scope.desfocou = function(){
+                    $scope.avisoEvento = "Desfocou";
+                };
+            });
+        </script>
+    </body>
+</html>

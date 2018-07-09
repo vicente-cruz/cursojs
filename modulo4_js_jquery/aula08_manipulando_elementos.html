@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--
+    Inserir via Console:
+    1) $("#teste_div").html("Novo texto!");
+    2) $("#teste_div").html("Esse é <strong>um texto em negrito</strong>");
+
+    Inserindo somente textos:
+    $("#teste_div").text("Esse é <strong>um texto em negrito</strong>");
+
+    Selecionando elemento por ID para mudar o ID:
+    $("#teste_div").attr("id","novo_id");
+
+    Inserindo imagem e atributos de formas diferentes:
+    $("#novo_id").html("<img src='http://www.google.com.br/google.jpg' border='0' alt='' />");
+    $("#novo_id").find("img").attr("width","100"); -> Insere atributo especifico "width:200"
+    $("#novo_id").find("img").width(200); -> Insere um CSS com "style='width: 200px;'"
+
+    Inserindo valor em um <input type='text' />:
+    $("input").attr("value","Texto qualquer");    
+    $("input").val("Texto qualquer");
+
+    Inserindo novo elemento exatamente antes ou depois outro. Ex: antes e depois do "input"
+    $("input").before("<div>Texto antes!</div>");
+    $("input").after("<div>Texto depois!</div>");
+    
+    Inserindo novo item numa lista:
+    $("ul").append("<li>Item 5</li>");
+
+    Inserir novo elemento dentro de outro no começo ou no fim. Ex: Texto no inicio e fim.
+    $("#teste").prepend("Novo elemento no inicio");
+    $("#teste").append("Novo elemento no fim");
+    Em listas:
+        $("ul").prepend("<li>Item 0</li>");
+
+    Removendo elemento. Ex: remover o input
+    $("input").remove();
+-->
+<html>
+    <head>
+        <title>Manipulando Elementos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="aula08_script.js"></script>
+    </head>
+    <body>
+        <div id="teste_div">
+            <button>Botão</button>
+        </div>
+        
+        <input type="text" name="nome" />
+        
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+        
+    </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!--
+    Regra geral
+    $("<elemento>") -> todos elementos <elemento>
+    $(".<classe>") -> todos elementos com classe <classe>
+    $("#<id>") -> elemento com id <id>
+
+    Apertar F12 -> Abrir o Console e executar:
+    1) > $("button"); -> Seleciona todos os elementos "botoes"
+    2) > $(".botao"); -> Seleciona todos elementos c/classe botão
+    3) > $("#botao1"); -> Seleciona botao c/id especifico
+    4) > $("li"); -> Seleciona todos os elementos "li"
+    5) > $("li.botao") -> Todos os elementos "li" com classe "botao"
+    6) > $("ul li.botao"); -> todos elementos "li" com classe "botao" de todas "ul" 
+    7) > $(".lista2 li.botao"); -> todos elementos "li" da classe "botao" de todos elementos da classe "lista2"
+    8) > $("ul.lista2 li.botao"); -> todos elementos "li" da classe "botao" de todas "ul" da classe "lista2"
+
+    Verificar se existe um elemento específico:
+    if ( $("<seletor>").length > 0 ) { ... }
+
+    Atribui elemento a uma variavel:
+    var elemento = $("ul.lista2 li.botao");
+-->
+<html>
+    <head>
+        <title>Seletores</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="aula05_script.js"></script>
+    </head>
+    <body>
+        <div class="teste_div">Teste DIV</div>
+        <button id="botao1" class="botao">Botão 1</button>
+        <button class="botao">Botão 2</button>
+        
+        <ul class="lista1">
+            <li>Item 1</li>
+            <li class="botao">Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+        
+        <ul class="lista2">
+            <li>Item 1</li>
+            <li class="botao">Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+    </body>
+</html>

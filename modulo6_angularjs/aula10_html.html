@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aula 10 - HTML</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    </head>
+    <body ng-app="appHtml" ng-controller="htmlCtrl">
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h2 class="panel-title"><a href="#conteudo" data-toggle="collapse">HTML com AngularJS</a></h2>
+                </div>
+                <div id="conteudo" class="collapse in panel-collapse">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+<!--                                {{html}}-->
+                                <ul class="list-group">
+                                    <li class="list-group-item" ng-repeat="item in lista">
+                                        {{item.nome}} tem {{item.idade}} anos.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">Palavras chaves:<code>$http.get([arquivo]).then(function(response){ [callback code] })</code></div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var app = angular.module("appHtml", []);
+            app.controller("htmlCtrl", function($scope, $http){
+//                $scope.html = "vazio";
+//                
+//                $http.get('aula10_paginateste.html').then(function(response){
+//                    $scope.html = response.data; // O conteudo do arquivo lido.
+//                });
+                $scope.lista = [];
+                $http.get("http://phpdozeroaoprofissional.com.br/testeangularjs.php").then(function(response){
+                    $scope.lista = response.data.resultado;
+                });
+            });
+        </script>
+    </body>
+</html>

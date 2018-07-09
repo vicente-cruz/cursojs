@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Eventos Formulário</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="aula04_script.js"></script>
+    </head>
+    <body>
+        <form method="POST" action="#" onSubmit="">
+            <input type="text" name="nome" onFocus="focou(this)" onBlur="desfocou(this)" /><br/><br/>
+            <select name="cidade" onChange="mudouOpcao(this)">
+                <option>São Paulo</option>
+                <option>Porto Alegre</option>
+                <option>Rio de Janeior</option>
+                <option>Belo Horizonte</option>
+            </select><br/><br/>
+            
+            <input type="submit" value="Enviar" />
+        </form>
+    </body>
+</html>

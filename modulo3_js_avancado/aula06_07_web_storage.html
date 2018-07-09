@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+    Abrir o Console -> digitar:
+        localStorage.setItem("nome", "Vicente");
+        sessionStorage.setItem("nome", "Vicente")
+    Fechar o browser, abrir o Console e digitar:
+        localStorage.getItem("nome"); -> Deve mostrar
+        sessionStorage.getItem("nome", "Vicente") -> Não deve mostrar
+    digitar:
+        localStorage.removeItem("nome");
+    Ex: criar localStorage para contar numero de visitas em uma pagina
+
+    Obs: jeito facil
+    Abrir o Console -> digitar:
+        localStorage.nome =  "Bonieky"; (atribui o valor pra variavel)
+        localStorage.nome; (recupera a variavel)
+--> 
+<html>
+    <head>
+        <title>Web Storage - Sessions Cookies</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+    <body onLoad="aplicaWebstorage()">
+        <div id="info"></div>
+        <script type="text/javascript" src="aula06_07_script.js"></script>
+    </body>
+</html>

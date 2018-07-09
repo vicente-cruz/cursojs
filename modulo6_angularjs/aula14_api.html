@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aula 14 - API</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    </head>
+    <body ng-app="appApi" ng-controller="ctrlApi">
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1 class="panel-title"><a href="#conteudo" data-toggle="collapse">API em AngularJS</a></h1>
+                </div>
+                <div id="conteudo" class="collapse in panel-collapse">
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs">
+                            <li><a href="#exemplo1" data-toggle="tab">Ex1 - upper/lowercase</a></li>
+                            <li><a href="#exemplo2" data-toggle="tab">Ex2 - isString/isNumber</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="exemplo1" class="tab-pane active in fade">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input type="text" ng-model="ex1Texto" ng-change="ex1CaixaAlta()"/>
+
+                                        <p>{{ex1Texto}}</p>
+                                        <p>{{ex1Texto2}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="exemplo2" class="tab-pane fade">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input type="text" ng-model="ex2Texto" ng-change="ex2OQueEh()"/>
+                                        
+                                        <p>{{ex2Texto}}</p>
+                                        <p>{{ex2Texto2}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        Keywords:<code>angular.uppercase() | angular.isString() | angular.isNumber()</code>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text/javascript">
+            var app = angular.module("appApi",[]);
+            app.controller("ctrlApi", function($scope, $http){
+                $scope.ex1Texto2 = "";
+                
+                $scope.ex1CaixaAlta = function(){
+                    $scope.ex1Texto2 = angular.uppercase($scope.ex1Texto);
+                };
+                
+                $scope.ex2Texto = "";
+                $scope.ex2Texto2 = "";
+                
+                $scope.ex2OQueEh = function(){
+                    if (angular.isString($scope.ex2Texto)) {
+                        $scope.ex2Texto2 = "É string!";
+                    }
+                    else if (angular.isNumber($scope.ex2Texto)) {
+                        $scope.ex2Texto2 = "É número!";
+                    }
+                    else {
+                        $scope.ex2Texto2 = "Nem string, nem número!";
+                    }
+                };
+            });
+        </script>
+    </body>
+</html>

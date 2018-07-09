@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aula 11 - Show Hide</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    </head>
+    <body ng-app="appShowHide" ng-controller="showHideCtrl">
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1 class="panel-title"><a href="#conteudo" data-toggle="collapse">Aula sobre Show e Hide</a></h1>
+                </div>
+                <div id="conteudo" class="collapse in panel-collapse">
+                    <div class="panel-body">
+                        <p>Conteudo abaixo vai ser mostrado condicionalmente!</p>
+                        <p ng-show="hora > 17">Mostrando conteudo do condicional: {{hora}}</p>
+                    </div>
+                    <div class="panel-footer">Keywords:<code>ng-show="[true ou 1 | false or 0 | {var > x}]"</code></div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var app = angular.module("appShowHide", []);
+            app.controller("showHideCtrl",function($scope, $http){
+//                $scope.mostrar = true;
+                $scope.hora = 20;
+            });
+        </script>
+    </body>
+</html>

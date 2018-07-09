@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+    Aula 20 - AddClass(), removeClasse() e toggleClass();
+    Aula 21 - addClass e removeClass no "mouseover" e "mouseout"
+    Aula 22 - "hover()" p/substituir mouseover/mouseout + "toggleClass()"
+    Aula 23 - Adicionando e Removendo Eventos:
+        Adicionando:
+            .bind(<evento>,function(){ ... });
+            .on(<evento>,function(){ ... })
+        Removendo:
+            .unbind(<evento>)
+            .off(<evento>);
+    Aula 24 - Falsos Eventos. Ex: clicar sem clicar...
+        $(<seletor>).trigger(<evento>);
+    Aula 25 - Propriedades Padrão de eventos:
+        Ex: Evitar o envio de um form após clicar em Submit.
+        (equivalente a " onsubmit='return false' ")
+        $("#submit").bind("click",function(e){
+            e.preventDefault();
+            console.log(e.type);
+            console.log(e.target);
+        });
+-->
+<html>
+    <head>
+        <title>Eventos em jQuery</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="aula20_21_script.js"></script>
+        <style type="text/css">
+            .fundovermelho {
+                background-color:#FF0000;
+            }
+        </style>
+    </head>
+    <body>
+        <!--<button onclick="console.log('Clicou');" >Clique!</button>-->
+        <button id="btn1">Botão 1</button>
+        <button id="btn2">Botão 2</button>
+        
+        <input type="checkbox" name="chk1" class="checkbox"/>
+        <input type="checkbox" name="chk2" class="checkbox"/>
+        <input type="checkbox" name="chk3" class="checkbox"/>
+        <br/><br/>
+        
+        <form method="POST" onsubmit="return false">
+            Nome:<input type="text" name="nome" id="nome"/><br/><br/>
+            <input type="submit" id="btnsubmit" value="Enviar" />
+        </form>
+    </body> 
+</html>

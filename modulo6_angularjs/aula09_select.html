@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aula 09 - Select</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    </head>
+    <body ng-app="appSelect" ng-controller="selectCtrl">
+        <div class="container">
+            <button class="btn btn-primary" data-toggle="collapse" data-target="#conteudo">Mostrar uso Select</button><br/><br/>
+            <div id="conteudo" class="panel panel-primary collapse in">
+                <div class="panel-heading">
+                    <h1 class="panel-title">Aula sobre uso de Selects</h1>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            Filtro: <input type="text" ng-model="filtro"/><br/><br/>
+                            Ordenar:
+                            <select ng-model="ordenacao" ng-options="op.indice for op in opcoes">
+                                <!--<option ng-repeat="op in opcoes">{{op}}</option>-->
+                            </select>
+                        </div>
+                        <div class="col-sm-8">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th ng-repeat="op in opcoes">{{op.valor | uppercase}}</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="lst in lista | orderBy:ordenacao.valor | filter:filtro">
+                                        <td>{{lst.nome}}</td>
+                                        <td>{{lst.pais}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <p>Códigos:<code>[select ng-model="ordenacao" ng-options="op.indice for op in opcoes"]</code></p>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var app = angular.module("appSelect",[]);
+            app.controller("selectCtrl", function($scope){
+                $scope.opcoes = [
+                    {indice:"Nome", valor:"nome"},
+                    {indice:"Pais", valor:"pais"}
+                ];
+                
+                $scope.lista = [
+                    {"nome":"Vicente", "pais":"Brasil"},
+                    {"nome":"Fulano", "pais":"Argentina"},
+                    {"nome":"Beltrano", "pais":"Uruguai"},
+                    {"nome":"Cicrano", "pais":"Paraguai"},
+                    {"nome":"Alguem", "pais":"Chile"}
+                ];
+            });
+        </script>
+    </body>
+</html>

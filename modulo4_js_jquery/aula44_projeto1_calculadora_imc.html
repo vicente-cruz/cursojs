@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+    Baseado no site: http://www.mdsaude.com/2014/10/imc-indice-de-massa-corporal.html
+    Fórmula: peso / altura^2
+    Obs:
+        Baixo peso muito grave = abaixo de 16 kg/m²
+        Baixo peso grave = entre 16 e 16,99 kg/m²
+        Baixo peso = entre 17 e 18,49 kg/m²
+        Peso normal = entre 18,50 e 24,99 kg/m²
+        Sobrepeso = entre 25 e 29,99 kg/m²
+        Obesidade grau I = entre 30 e 34,99 kg/m²
+        Obesidade grau II = entre 35 e 39,99 kg/m²
+        Obesidade grau III (obesidade mórbida) = maior que 40 kg/m²
+-->
+<html>
+    <head>
+        <title>Calculadora IMC - jQuery</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="jquery.mask.js"></script>
+        <script type="text/javascript" src="aula44_script.js"></script>
+    </head>
+    <body>
+        Altura em metros (ex: 1,70 metros)<br/>
+        <input type="text" name="altura" id="altura" /><br/><br/>
+        
+        Peso em quilos<br/>
+        <input type="text" name="peso" id="peso" /><br/><br/>
+        
+        <button>Calcular IMC</button><br/><br/>
+        
+        <div id="resultado"></div>
+    </body>
+</html>

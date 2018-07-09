@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aula 01 - Introdução AngularJS</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="angular.min.js"></script>
+    </head>
+    <body>
+        <div>
+            Single Page Applications -> Sistemas c/uma única página<br/>
+            Manipulações somente no JS.<br/>
+            Acessar o site do <a href="https://angularjs.org/">Angular</a> e baixar a versão "min"
+        </div>
+        <div ng-app="" ng-init="nome = 'Vicente'">
+            <p>Declara ng-model="minha_variavel" e amarra -> ng-bind="minha_variavel" </p>
+            Meu nome é: <input type="text" ng-model="nome" /><br/><br/>
+            
+            <p>Diretiva: "ng-algum_nome"!</p>
+            
+            <p ng-bind="nome"></p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+    No console:
+        buscar DIV imediatamente acima ao elemento de classe="filha":
+            > $(".filha").parent() -> pode ir subindo
+        A partir do elemento classe="site", chegar em class="filha"
+            > $(".filha");
+            > $(".site").find(".filha")
+            > $(".site").find(".topo").find(".filha")
+        A partir de class="irmao", chegar em class="topo" (sem conhecer a estrutura)
+            > $(".irmao").closest(".topo");
+        A partir de class="irmao", chegar em class="conteudo" (sem conhecer a estrutura)
+            > $(".irmao").closest(".site").find(".conteudo");
+            > $(".irmao").closest(".topo").find(".conteudo"); X ERRO !!
+        Obs: find() -> descendente | closest() -> ascendente
+        Dica: Usar o .closest() ao inves de .parent().
+-->
+<html>
+    <head>
+        <title>Navegando entre Elementos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    </head>
+    <body>
+        <div class="site">
+            <div class="topo">
+                <div class="subtopo">
+                    <span class="irmao"></span>
+                    <span class="filha"></span>
+                </div>
+            </div>
+            <div class="conteudo"></div>
+            <div class="rodape"></div>
+        </div>
+    </body>
+</html>

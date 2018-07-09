@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+        <style type="text/css">
+            .tab-content {
+                border-left: 1px solid #DDDDDD;
+                border-right: 1px solid #DDDDDD;
+                border-bottom: 1px solid #DDDDDD;
+                padding: 10px;
+            }
+            .nav-tabs {
+                margin-bottom:0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1 class="panel-title"><a href="#conteudo" data-toggle="collapse">HTTP Server em NodeJS</a></h1>
+                </div>
+                <div id="conteudo" class="collapse panel-collapse">
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#exemplo1" data-toggle="tab">Criando HTTP Server</a></li>
+                            <li><a href="#exemplo2" data-toggle="tab">Express</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="exemplo1" class="tab-pane active in fade">
+                                <p>Criar o servidor: <code>var http = require("http");</code></p>
+                                <p>Definição: <code>http.createServer(function(req, res){ ... });</code></p>
+                                <p>Por meio do módulo Express, pode-se incrementar o servidor.</p>
+                            </div>
+                            <div id="exemplo2" class="tab-pane fade">
+                                <p>Instalar o módulo <strong>Express</strong>. Executar: <code>:\> npm install express</code> </p>
+                                <p>Criar a pasta <code>www</code> dentro do projeto</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aula 22 - Modal</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Aula sobre Modais ou Lightboxes</h1>
+            <p>Como usar modais! Importante:<code>role="dialog"</code></p>
+            
+            <hr/>
+            
+            <button class="btn btn-info" data-toggle="modal" data-target="#janela">Abrir Modal</button>
+            
+            <div id="janela" class="modal" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Titulo do meu Modal <code>class="modal-title"</code></h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Um conteúdo genérico do meu modal, explicando alguma coisa e mostrando alguma imagem. <code>class="modal-body"</code></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default" data-dismiss="modal">Fechar <code>class="modal-footer"</code></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

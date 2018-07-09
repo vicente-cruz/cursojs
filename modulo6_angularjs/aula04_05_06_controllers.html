@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aula 6 - Diretivas, Models e Controllers</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="angular.min.js"></script>
+    </head>
+    <body ng-app="testeApp" ng-controller="appCtrl">
+        <div class="container">
+            <h1>Aula sobre controllers</h1>
+            <p>Vamos aprender a usar controllers. <code>ng-app="testeApp" ng-controller="appCtrl"</code></p>
+            
+            <hr/>
+            
+            <input type="text" ng-model="primeiroNome" /><br/>
+            <input type="text" ng-model="sobreNome" /><br/>
+            Imprimindo conteúdo de <code>ng-model="primeiroNome" ng-model="sobreNome"</code>:{{primeiroNome + " " +sobreNome}}
+            <br/><br/>
+            
+            <input type="text" ng-model="n1" /><br/>
+            <input type="text" ng-model="n2" /><br/>
+            <p>Resultado de <code>ng-model="n1" ng-model="n2"</code>: {{n1 + n2}}</p>
+            
+        </div>
+        <script type="text/javascript">
+            var app = angular.module("testeApp",[]);
+            app.controller('appCtrl',function($scope){
+                $scope.primeiroNome = "Vicente";
+                $scope.sobreNome = "Silva Cruz";
+                $scope.n1 = 0;
+                $scope.n2 = 0;
+            });
+        </script>
+    </body>
+</html>

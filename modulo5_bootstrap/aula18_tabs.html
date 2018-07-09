@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aula 18 - Tabs</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Aula 18 - Abas</h1>
+            <p>Aula sobre Abas (Tabs): <code>class="nav nav-tabs"</code> e <code>class="tab-content"</code></p>
+            
+            <hr/>
+            
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#home" data-toggle="tab">HOME</a>
+                </li>
+                <li>
+                    <a href="#sobre" data-toggle="tab">SOBRE</a>
+                </li>
+                <li>
+                    <a href="#contato" data-toggle="tab">CONTATO</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div id="home" class="tab-pane active in">
+                    <h3>HOME</h3>
+                    <p>Conteúdo da página HOME</p>
+                </div>
+                <div id="sobre" class="tab-pane fade">
+                    <h3>SOBRE</h3>
+                    <p>Conteúdo da página SOBRE</p>
+                </div>
+                <div id="contato" class="tab-pane">
+                    <h3>CONTATO</h3>
+                    <p>Conteúdo da página CONTATO</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Manipulando atributos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="aula06_script.js"></script>
+    </head>
+    <body>
+        <!--
+            Altera um atributo:
+                $("<elemento>").attr("<atributo>","valor")
+            Altera o atributo 'href' do elemento 'a':
+            $("a").attr("href","http://www.google.com.br");
+            <a href="">Google</a>
+        -->
+        
+        <!--
+            Altera atributos da imagem:
+                $("img").attr("width","100");
+                $("img").attr("border","5");
+            Pegar um atributo:
+                var valor = $("img").attr("border");
+                var url = $("a").attr("href");
+            
+        -->
+        <img src="http://www.google.com.br/google.jpg" border="0" alt="">
+    </body>
+</html>

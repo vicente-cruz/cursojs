@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+    No Console:
+        Atribuir o elemento h1 p/variavel e alterar conteudo
+            var titulo = $("h1");
+            titulo.html("Novo titulo");
+        Em Javascript
+            var div = document.getElementById("id_teste");
+            div.html("Muda texto!"); -> ERRO!!! Precisa converter!!!
+            $(div).html("Muda texto!"); ok!!
+            Ou ainda
+            $(document.getElementById("div")).html("Novo texto convertido");
+        Pegando o 2º item da lista e atribuindo a uma variavel:
+        var segundoItem = $("li:eq(1)"); // Contagem inicia em 0
+        ou:
+        var segundoItem = $("li").eq(1);
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    </head>
+    <body>
+        <h1>Meu titulo</h1>
+        <div id="id_div">Texto qualquer</div>
+        
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+        </ul>
+    </body>
+</html>

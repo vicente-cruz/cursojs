@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aula 08 - Filters</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    </head>
+    <body ng-app="appFilter" ng-controller="filterCtrl">
+        <div class="container">
+            <h1>Aula sobre Filters em AngularJS</h1>
+            <p>Veremos como faremos filters</p>
+            
+            <hr/>
+            
+            <div class="panel panel-primary">
+                <div class="panel-heading"><h4 class="panel-title">Exemplo de lista!</h4></div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            Informe seu filtro: <input type="text" autofocus placeholder="Filtro aqui!" ng-model="filtroTeste"/><br/><br/>
+                            Ordenar por:<br/>
+                            <input type="radio" value="nome" ng-model="orderTeste" /> Nome
+                            <input type="radio" value="pais" ng-model="orderTeste" /> País
+                        </div>
+                        <div class="col-sm-8">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <td class="success">Nome</td>
+                                        <td class="warning">País</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="lst in listaTeste | filter:filtroTeste | orderBy:orderTeste">
+                                        <td>{{lst.nome}}</td>
+                                        <td>{{lst.pais}}</td>
+                                    </tr>                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer"><code>ng-repeat="i in lst | filter:[nome_filtro]"</code> => <code> i.value | [lowercase | uppercase | orderBy:{nome_var}] </code></div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var app = angular.module("appFilter",[]);
+            app.controller("filterCtrl",function($scope){
+                $scope.listaTeste = [
+                    {"nome":"Fulano", "pais":"Brasil"},
+                    {"nome":"Beltrano", "pais":"Dinamarca"},
+                    {"nome":"Cicrano", "pais":"Moldávia"},
+                    {"nome":"Dandão", "pais":"Croácia"},
+                    {"nome":"Energúmeno", "pais":"Albânia"},
+                    {"nome":"Focíldo", "pais":"República Checa"},
+                ];
+            });
+        </script>
+    </body>
+</html>

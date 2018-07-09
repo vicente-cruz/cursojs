@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+    1) Abrir console:
+    2) Inserir um atributo qualquer com valor qualquer:
+        > $("input").attr("data-idade","90");
+    3) Salvando dado propriamente dito: $("<seletor>").data("<variavel>","<dado>");
+        > $("input").data("idade","35");
+    4) Recuperando:
+        > var idade = $("input").data("idade");
+    5) Pegando #chars inserido no input
+        > $("input").data("num_chars", $("input").val().length);
+-->
+<html>
+    <head>
+        <title>Salvando Dados em Elemento</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    </head>
+    <body>
+        <h1>Titulo da Página</h1>
+        <span>Nome:</span><br/>
+        
+        <input type="text" name="nome" /><br/>
+        
+        <button>Botão</button>
+    </body>
+</html>

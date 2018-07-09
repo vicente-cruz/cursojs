@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Eventos Browser</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="jquery-3.2.1.min.js" ></script>
+        <script type="text/javascript" src="aula27_script.js" ></script>
+        <style type="text/css">
+            .fundovermelho {
+                background-color:#FF0000;
+            }
+            .focado {
+                background-color:#999;
+            }
+        </style>
+    </head>
+    <body>
+        <form method="POST" id="form">
+            Nome:<input type="text" name="nome" id="nome" /><br/><br/>
+            Email:<input type="email" name="email" id="email" /><br/><br/>
+
+            Idade:
+            <select name="idade" id="idade">
+                <option>10 anos</option>
+                <option>20 anos</option>
+                <option>30 anos</option>
+            </select><br/><br/>
+
+            <input type="submit" value="Enviar" />
+        </form>
+    </body>
+</html>

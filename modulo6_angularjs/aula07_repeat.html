@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aula 07 - Repeat</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    </head>
+    <body ng-app="appRepeat" ng-controller="appCtrl">
+        <div class="container">
+            <h1>Aula 07 - Repeat em AngularJS</h1>
+            <p>Vamos aprender a usar o Repeat em AngularJS</p>
+            
+            <hr/>
+            
+            <h2>Ex 1: receita de um bolo genérico -> Lista simples</h2>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="ingS in ingrSimples">
+                    {{ ingS }}
+                </li>
+            </ul>
+            
+            <h2>Ex 2: Bolo genérico -> Lista complexa</h2>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="ingC in ingrComplexo">
+                    {{ingC.qt}} de {{ingC.nome}}
+                </li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            var app = angular.module("appRepeat",[]);
+            app.controller("appCtrl", function($scope){
+                $scope.ingrSimples = ["farinha","ovo","leite","chocolate"];
+                
+                $scope.ingrComplexo = [
+                    {'nome':'Farinha', 'qt':'200g'},
+                    {'nome':'Ovo', 'qt':'12'},
+                    {'nome':'Leite', 'qt':'2lt'},
+                    {'nome':'Chocolate', 'qt':'500g'}
+                ];
+            });
+        </script>
+    </body>
+</html>

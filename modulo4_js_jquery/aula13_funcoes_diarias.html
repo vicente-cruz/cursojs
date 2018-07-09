@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+Abrir Console:
+    1) Função TRIM: $.trim(<texto>);
+        > var valor = $("#teste_div").html();
+        > $.trim(valor);
+        Ou
+        > var valor = $.trim($("#teste_div").html());
+    2) Função EACH: $(<elemento>).each(function(){ ... });
+        > $("li").each(function(){
+            console.log($(this).html())
+          });
+    3) Função TYPE: $.type(<nome_var>);
+        > var elem = $("div");
+        > $.type(elem); -> Objeto
+        Ou $.type($("div"));
+
+        > var elem = $("div").html();
+        > $.type(elem); -> String
+        Ou $.type($("div").html());
+    4) Função $.isNumeric() / $.isArray() / $.isFunction():
+        
+-->
+<html>
+    <head>
+        <title>Funções do dia a dia</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    </head>
+    <body>
+        <div id="teste_div">
+            
+            Texto de teste
+            
+        </div>
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+            <li>Item 4</li>
+            <li>Item 5</li>
+        </ul>
+    </body>
+</html>

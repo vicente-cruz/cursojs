@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<!--
+    Faz sumir/aparecer com opacidade indo de 1.0 a 0.0
+    > $(<seletor>).fadeOut(); $(".div").fadeOut(); 
+    > $(<seletor>).fadeIn(); $(".div").fadeIn(); 
+
+    > $(<seletor>).fadeTo(<speed>,<number>); $(".div").fadeTo("slow",0.5);
+
+    > $(<seletor>).fadeToggle(<speed>); $(".div").fadeToggle("slow");
+-->
+<html>
+    <head>
+        <title>Efeito Fade</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="aula32_script.js"></script>
+        <style type="text/css">
+            .botao {
+                width:150px;
+                height:35px;
+                line-height:35px;
+                background-color:#999;
+                text-align:center;
+                cursor:pointer;
+            }
+            .div {
+                width:150px;
+                height:150px;
+                background-color:#DDD;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="botao">Botão</div>
+        
+        <div class="div"></div>
+    </body>
+</html>

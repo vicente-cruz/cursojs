@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aula 06 - Criando Módulos</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+        <style type="text/css">
+            .tab-content {
+                border-left:1px solid #DDDDDD;
+                border-right:1px solid #DDDDDD;
+                border-bottom:1px solid #DDDDDD;
+                padding:10px;
+            }
+            .nav-tabs {
+                margin-bottom:0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1 class="panel-title"><a href="#conteudo" data-toggle="collapse">Aula sobre criação de módulos em NodeJS</a></h1>
+                </div>
+                <div id="conteudo" class="collapse panel-collapse">
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#exemplo1" data-toggle="tab">Criando Módulos</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="exemplo1" class="tab-pane active in fade">
+                                <ul class="list-group">
+                                    <li class="list-group-item">Criar a classe:<code>var Matematica = { ... };</code></li>
+                                    <li class="list-group-item">Exportar: <code>module.export = Matematica;</code></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

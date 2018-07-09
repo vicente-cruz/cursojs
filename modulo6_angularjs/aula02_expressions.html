@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aula 02 - Expressions</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="angular.min.js"></script>
+    </head>
+    <body>
+<!--        
+        <div class="container" ng-app="" style="background-color:{{cor}};">
+
+            Nome: <input type="text" ng-model="nome" /><br/>
+            Sobrenome: <input type="text" ng-model="sobrenome" /><br/><br/>
+
+            Cor do fundo:<input type="text" ng-model="cor">
+            <p>{{ nome + " " + sobrenome }}</p>
+        </div>
+-->
+        <div ng-app="" ng-init="dolar=3.15">
+            Insira o valor em Reais R$: <input type="text" ng-model="real" />
+            <p>Conversão: R${{real}} vale US$ {{real/dolar}}.</p>
+        </div>
+    </body>
+</html>

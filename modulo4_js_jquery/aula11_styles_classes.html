@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+    1) Abrir console:
+    2) Adicionar o fundo vermelho ao 'h1'
+        > $("h1").addClass("fundovermelho");
+    3) Remover classe
+        > $("h1").removeClass("fundovermelho");
+    4) Verificar se um elemento possui uma dada classe
+        > $("h1").hasClass("fundovermelho");
+    5) Add css estilo especifico a um elemento: $("h1").css("<atributo>","<valor>");
+        > $("h1").css("color","blue");
+        > $("button").css("border","1px solid #000").css("background-color","#FF0000").css("color","#FFF");
+-->
+<html>
+    <head>
+        <title>CSS, Style e Dimensoes</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <style type="text/css">
+            .fundovermelho {
+                background-color:#FF0000;
+            }
+            .campodetexto {
+                width:300px;
+                height: 35px;
+                font-size:20px;
+                border:1px solid #000;
+                background-color:#999;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Titulo da Página</h1>
+        <span>Nome:</span><br/>
+        
+        <input type="text" name="nome" /><br/>
+        
+        <button>Botão</button>
+    </body>
+</html>

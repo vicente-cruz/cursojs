@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Aula 16 - Lista de Compras</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+        <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+    </head>
+    <body ng-app="appListaCompra" ng-controller="ctrlListaCompra">
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h1 class="panel-title"><a href="#conteudo" data-toggle="collapse">Exercício - Lista de Compras</a></h1>
+                </div>
+                <div id="conteudo" class="collapse in panel-collapse">
+                    <div class="panel-body">
+                        <ul class="nav nav-tabs">
+                            <li><a href="#listaCompras" data-toggle="tab">Exemplo: Lista de Compras</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <div id="listaCompras" class="tab-pane active in fade">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input type="text" ng-model="novoItem" /> <button ng-click="addItem()" class="btn btn-primary">+</button><br/>
+                                        <span>{{aviso}}</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table class="table table-bordered table-striped">
+                                            <tr ng-repeat="lst in lista">
+                                                <td>{{lst}}</td>
+                                                <td><button ng-click="removeItem($index)" class="btn btn-danger">-</button></td>
+                                            </tr>
+                                        </table>
+<!--                                        <ul class="list-group">
+                                            <li class="list-group-item" ng-repeat="lst in lista | orderBy:lst">
+                                                {{lst}} <button class="btn btn-danger">-</button>
+                                            </li>
+                                        </ul>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">Keywords:<code></code></div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var app = angular.module("appListaCompra",[]);
+            app.controller("ctrlListaCompra", function($scope, $http){
+                $scope.lista = ["Leite", "Pão"];
+                
+                $scope.addItem = function(){
+                    if ($scope.novoItem !== '') {
+                        if ($scope.lista.indexOf($scope.novoItem) === -1) {
+                            $scope.lista.push($scope.novoItem);
+                        }
+                        else {
+                            $scope.aviso="Item já existe";
+                        }
+                    }
+                    $scope.novoItem = "";
+                };
+                $scope.removeItem = function(item){
+                    $scope.novoItem = "";
+                    $scope.lista.splice(item,1);
+                };
+            });
+        </script>
+    </body>
+</html>
